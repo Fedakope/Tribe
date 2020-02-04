@@ -1,0 +1,3 @@
+class Indien < ApplicationRecord
+    
+end

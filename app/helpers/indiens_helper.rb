@@ -1,0 +1,2 @@
+module IndiensHelper
+end
