@@ -1,15 +1,14 @@
 class IndiensController < ApplicationController
   def index
-    #@indiens = Indien.all
-    if params[:filters].blank?
       @indiens = Indien.page(params[:page]).per(15)
-  else 
-    @indiens = Indien.page(params[:page]).per(15).select do |indien|
-      indien[:name] == params[:filters]  || indien[:surname] == params[:filters] || indien[:ancestor] == params[:filters]
-    end
   end 
-  end 
+   
   
+  def search
+    @indiens = Indien.where("name LIKE ?", "%" + params[:q] + "%" ).or(Indien.where("surname LIKE ?", "%" + params[:q] + "%" )).or(Indien.where("birthdate LIKE ?", "%" + params[:q] + "%" ))
+    render action: "index"
+  end
+
 
   def show
     @indien = Indien.find(params[:id])
@@ -30,6 +29,7 @@ class IndiensController < ApplicationController
   def edit
   end
 
+  
 
   private
   # Useless les params car on permet tout

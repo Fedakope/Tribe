@@ -1,19 +1,6 @@
-<h1>Indiens#index</h1>
-<p>Find me in app/views/indiens/index.html.erb</p>
+<h1>Search Results</h1>
 
-
-<form action="/search" method="get">
-  <input type="text" required="required" name="q" placeholder="Entrez un nom, prénom, date de naissance ou ancetre">
-  <input type="submit"> </form>
-   <%= link_to "Reset", root_path %>
-
-
-
-<h1>indiens list</h1>
-<% if params[:filters].blank? && params[:q].blank?%>
-<%= paginate @indiens %>
-<% end %>
-<table>
+    <table>
   <thead>
     <th>ID</th>
     <th>Name</th>
