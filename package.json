@@ -1,5 +1,7 @@
 {
   "name": "Tribe",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "flatpickr": "^4.6.3"
+  }
 }

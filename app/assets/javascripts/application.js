@@ -14,3 +14,9 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+import flatpickr from 'flatpickr'
+
+flatpickr(".datepicker", {
+    
+});

@@ -2,14 +2,14 @@ class IndiensController < ApplicationController
   def index
     #@indiens = Indien.all
     if params[:filters].blank?
-      @indiens = Indien.all
+      @indiens = Indien.page(params[:page]).per(15)
   else 
-    @indiens = Indien.all.select do |indien|
+    @indiens = Indien.page(params[:page]).per(15).select do |indien|
       indien[:name] == params[:filters]  || indien[:surname] == params[:filters] || indien[:ancestor] == params[:filters]
     end
   end 
   end 
-  end
+  
 
   def show
     @indien = Indien.find(params[:id])
@@ -26,6 +26,7 @@ class IndiensController < ApplicationController
     redirect_to indien_path(@indien)
   end
 
+
   def edit
   end
 
@@ -38,3 +39,4 @@ class IndiensController < ApplicationController
 
 
 
+end
