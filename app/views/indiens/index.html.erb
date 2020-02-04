@@ -1,2 +1,27 @@
 <h1>Indiens#index</h1>
 <p>Find me in app/views/indiens/index.html.erb</p>
+
+
+<h1>indiens list</h1>
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Birthdate</th>
+    <th>Ancestor</th>
+    <th>Longitude</th>
+    <th>Latitude</th>
+  </thead>
+  <% @indiens.each do |indien| %>
+  <tr>
+    <td><%= indien.id %></td>
+    <td><%= indien.name %></td>
+    <td><%= indien.surname %></td>
+    <td><%= indien.birthdate %></td>
+    <td><%= indien.ancestor %></td>
+    <td><%= indien.longitude %></td>
+    <td><%= indien.latitude %></td>
+  </tr>
+  <% end %>
+</table>
