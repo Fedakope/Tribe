@@ -14,11 +14,13 @@ class PagesController < ApplicationController
      age = Date.today.year - indien.birthdate.year
       age2 = age - 1 if Date.today < indien.birthdate + age.years
       allAge << age2
-
       end
-      
+    
+      @allAge = allAge
+      @ageMax = allAge.max
+      @ageMaxPosition = allAge.index(allAge.max)
+      @older = @indiens.find(@ageMaxPosition+1)
       @ageMoyen = allAge.sum.fdiv(allAge.size).round(1)
-
 
   end 
 
