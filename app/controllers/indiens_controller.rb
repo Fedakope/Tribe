@@ -1,6 +1,14 @@
 class IndiensController < ApplicationController
   def index
-    @indiens = Indien.all
+    #@indiens = Indien.all
+    if params[:filters].blank?
+      @indiens = Indien.all
+  else 
+    @indiens = Indien.all.select do |indien|
+      indien[:name] == params[:filters]  || indien[:surname] == params[:filters] || indien[:ancestor] == params[:filters]
+    end
+  end 
+  end 
   end
 
   def show
@@ -21,11 +29,12 @@ class IndiensController < ApplicationController
   def edit
   end
 
-  private
 
+  private
   # Useless les params car on permet tout
   def indien_params
     params.require(:indien).permit(:name, :surname, :birthdate, :ancestor, :longitude, :latitude)
   end
 
-end
+
+
