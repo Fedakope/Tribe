@@ -1,14 +1,11 @@
 <h1>Pages#statistiques</h1>
 <p>Find me in app/views/pages/statistiques.html.erb</p>
 <p>Now is <%= Time.now %></p>
-
 <p>There is <%= Indien.count %> indiens dans la tribu </p>
 
-<p> L'âge moyen de la tribue est : <%=  @ageMoyen %> </p>
+<p>Le plus agé à <%= @older %> ans </p>
 
-<p> Le membre le plus agé à: <%=  @ageMax %> </p>
+<p>L'age moyen est <%= @ageMoyen.round %> ans </p>
 
-Il est en position : <p> <%= @ageMaxPosition %> ce qui correspond à l'id <%= @ageMaxPosition +1 %> et c'est : 
-<%= @older.name %> <%= @older.surname %>
 
-<p> <%= @allAge %>
+gars : <%= @ppl.name %> <%= @ppl.surname %>

@@ -1,29 +1,25 @@
 class PagesController < ApplicationController
   def statistiques
 
-  #  <% dob = Date.new(1990, 05, 04) %>
-  #  <% age = Date.today.year - dob.year %>
-  # <% age -= 1 if Date.today < dob + age.years %>
-  #  Age (dob 1990 05 04)= <%= age %>
+    ageAll = [];
+    indiens = Indien.all
 
-    allAge = []
-    @indiens = Indien.all
-
-    @indiens.each do |indien|
-     indien.birthdate.year
+    indiens.each do |indien|
      age = Date.today.year - indien.birthdate.year
-      age2 = age - 1 if Date.today < indien.birthdate + age.years
-      allAge << age2
-      end
-    
-      @allAge = allAge
-      @ageMax = allAge.max
-      @ageMaxPosition = allAge.index(allAge.max)
-      @older = @indiens.find(@ageMaxPosition+1)
-      @ageMoyen = allAge.sum.fdiv(allAge.size).round(1)
+     if (Date.today < (indien.birthdate + age.years))
+      age = age -1
+     end
+     ageAll << age
+    end
 
-  end 
+    @older = ageAll.max
+    @ageMoyen = ageAll.sum.fdiv(ageAll.size)
+    ageMaxPosition = ageAll.index(ageAll.max)
+    @ppl = Indien.find(ageMaxPosition+1)
 
+  end
 
 
 end
+
+
