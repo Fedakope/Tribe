@@ -1,4 +1,5 @@
 class IndiensController < ApplicationController
+
   def index
       @indiens = Indien.page(params[:page]).per(15)
   end 

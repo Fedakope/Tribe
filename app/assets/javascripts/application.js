@@ -16,20 +16,20 @@
 //= require turbolinks
 //= require_tree .
 
+//= require leaflet
 
 
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui/widgets/autocomplete
-//= require autocomplete-rails
+
+//= require moment
+//= require moment/fr.js
+
+//= require bootstrap-datepicker
 
 
 
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
 
-
-
-import flatpickr from 'flatpickr'
-
-flatpickr(".datepicker", {
-    
-});

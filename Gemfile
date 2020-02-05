@@ -68,7 +68,14 @@ gem 'kaminari'
 #Simpleform
 gem 'simple_form'
 
-gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'rails-ujs', '~> 0.1.0'
 
-gem 'rails-jquery-autocomplete'
+gem 'simple_form'
+gem 'bootstrap-sass'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'jquery-rails'
+gem 'momentjs-rails', '>= 2.9'
+gem 'bootstrap-datepicker-rails'
+
+
+gem 'leaflet-rails'

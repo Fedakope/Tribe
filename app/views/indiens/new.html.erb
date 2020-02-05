@@ -3,8 +3,6 @@
 
 
 
-
-
 <p>Gemless version</p>
 <form action="/indiens" method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
@@ -15,7 +13,7 @@
   <input type="text" name="indien[surname]" id="surname">
 
   <label for="birthdate">Birthdate: </label>
-  <input type="date" name="indien[birthdate]" id="birthdate">
+  <input class='datepicker' type="date" name="indien[birthdate]" id="birthdate">
 
   <label for="ancestor">Ancestor: </label>
   <input type="text" name="indien[ancestor]" id="ancestor">
@@ -36,11 +34,10 @@
 <%= simple_form_for @indien do |f| %>
   <%= f.input :name, :label => 'Name' %>
   <%= f.input :surname, :label => 'Surname' %>
-  <%= f.input :birthdate, :label => 'Birthdate' %>
-
+  <%= f.input :birthdate, :input_html => { :data => {:datepicker => :datepicker} }, :label => 'Birthdate' %>
+  
   <%= f.label :ancestor %>
   <%= f.text_field :ancestor %>
-
 
   <%= f.button :submit %>
 <% end %>
