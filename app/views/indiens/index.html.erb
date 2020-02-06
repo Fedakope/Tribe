@@ -1,11 +1,14 @@
+
 <h1>Indiens#index</h1>
-<p>Find me in app/views/indiens/index.html.erb</p>
 
 
 <form action="/search" method="get">
   <input type="text" required="required" name="q" placeholder="Entrez un nom, prénom, date de naissance ou ancetre">
   <input type="submit"> </form>
-   <%= link_to "Reset", root_path %>
+
+  <p> <%= link_to "Reset", root_path %> </p>
+  <p> <%= link_to "Statistiques", controller: "pages", action: "statistiques" %></p>
+  <p> <%= link_to "Ajouter un nouveau memebre à la tribue", controller: "indiens", action: "new" %></p>
 
 
 
@@ -66,3 +69,6 @@ var mymap = L.map('map').setView([51.505, -0.09], 13);
           }).addTo(macarte);
       }
   </script>
+
+
+

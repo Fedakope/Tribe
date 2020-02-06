@@ -18,7 +18,7 @@
 
 //= require leaflet
 
-
+//= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
 

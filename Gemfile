@@ -79,3 +79,4 @@ gem 'bootstrap-datepicker-rails'
 
 
 gem 'leaflet-rails'
+gem 'bootstrap'
